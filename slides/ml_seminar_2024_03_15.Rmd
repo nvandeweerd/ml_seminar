@@ -1,7 +1,7 @@
 ---
 title: "Master Language"
 subtitle: "Annotation of learner corpus data"  
-date: "Vrije Universiteit Amsterdam  &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; March 15th, 2024"
+date: "Vrije Universiteit Amsterdam  &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; March 15th, 2024"
 author: 
   - "Dr. Nathan Vandeweerd"
 output:
@@ -13,7 +13,7 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-knit: pagedown::chrome_print
+#knit: pagedown::chrome_print
 editor_options: 
   chunk_output_type: console
 ---
@@ -63,7 +63,7 @@ bib <- RefManageR::ReadBib(here("slides", "assets", "references.bib"), check = T
 
 ```{r xaringan-banner, echo=FALSE}
 xaringanExtra::use_banner(
-  bottom_center = paste0("Last updated: ", Sys.time(), " | ", "Slides available here: github.com/nvandeweerd/ml_seminar_2024_03_15"),
+  bottom_center = paste0("Last updated: ", format(Sys.time()), " | ", "Slides available here: github.com/nvandeweerd/ml_seminar_2024_03_15"),
   exclude = "title-slide"
 )
 ```
@@ -107,82 +107,50 @@ class: header-slide
   - Accuracy of automatic transcription software for L2 data
   - Language development during study abroad 
   - Crowdsourcing language assessment (CLAP) 
+  - Linguistic characteristics of AI vs. L2-produced text
 
 ]
 
 .pull-right[
-
-.content-box-grey[
-
-Lijdende voorwerpen  
-(werkwoord + naamwoord)  
-Bijv.  
-**tenir + compte**  
-'rekening + houden'
-]
-
-```{r, out.width="60%"}
-knitr::include_graphics("figures/id_pic_cropped_small.jpeg")
+```{r, out.width="60%", fig.align='center'}
+knitr::include_graphics("figures/id-pic-noleaf.png")
 ```
 
 ]
 
-
 ---
 
-## About you
+## About me
 
 .pull-left[
 
-```{r}
-<<map>>
-```
+`r icons::fontawesome("university")` Radboud University Nijmegen  
+`r icons::fontawesome("building")` Assistant professor in Language and Communication  
+`r icons::fontawesome("search")` What makes me happy:
+- Eurovision Songcontest (Go Joost!)
+- Baking cookies 
+- Cycling
+- Reading
+
 
 ]
 
 .pull-right[
-
-.content-box-blue[
-`r icons::fontawesome("hand-paper")` How many of you have experience with programming (R, python, etc.,)  
-
-]
+```{r, out.width="60%", fig.align='center'}
+knitr::include_graphics("figures/id-pic-leaf.png")
+```
 
 ]
 
 
-
 ---
 
-## Your goals
-
-
-> "the correlation between corpus building and its exploitation"  
---
-
-<br>
-> "most appropriate scientific approaches that one may use in analysing data from a learner corpus"  
---
-
-<br>
-> "I would like to know which new (or less new) software might be used to analyse the corpus. "  
---
-
-<br>
-> "how to build my own machine-learning scheme when using topic modelling?"  
---
-
-.content-box-blue[
-
-`r icons::fontawesome("search")` Check out the `topicmodels` package in R and Murakami et al. (2017). But also `r Citet(bib, c("Shadrova2021a"), before = "", after = "")` for a word of caution.]  
---
-
-<br>
-> "Secondly, I wish to get some theoretical knowledge & practical skills on programming"  
+<iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/events/TBIHYT/questions/65e5e027add92ffa913d95c6" width="100%"></iframe>
 
 
 ---
 
-## What types of automatic annotation exist?
+## Types of automatic annotation
 
 .pull-left[
 .large[
@@ -194,7 +162,7 @@ knitr::include_graphics("figures/id_pic_cropped_small.jpeg")
 ---
 
 
-## What types of automatic annotation exist?
+## Types of automatic annotation
 
 .pull-left[
 .large[
@@ -213,9 +181,9 @@ knitr::include_graphics("figures/pos_example.png")
 
 .pull-right[
 
-`r icons::fontawesome("search")` Your research:  
+`r icons::fontawesome("search")` Research topics  
 
-- Spanish articles
+- articles
 - morpho-syntactic and syntactic labels
 - morphology
 - semantic, syntactic and discourse features
@@ -227,15 +195,13 @@ knitr::include_graphics("figures/pos_example.png")
 - verb aspect
 - adverbs of degree and negation
 - verb phrase ellipsis
-- colour terms
-- meta-discourse markers
-- formulaic language 
+- formulaic language/phraseology 
 
 ]
 
 ---
 
-## What types of automatic annotation exist?
+## Types of automatic annotation
 
 .pull-left[
 .large[
@@ -254,9 +220,9 @@ knitr::include_graphics("figures/pos_example.png")
 
 .pull-right[
 
-`r icons::fontawesome("search")` Your research:  
+`r icons::fontawesome("search")` Research topics  
 
-- Spanish .green[articles]
+- .green[articles]
 - .green[morpho-syntactic and syntactic labels]
 - .green[morphology]
 - semantic, syntactic and .green[discourse features]
@@ -268,15 +234,13 @@ knitr::include_graphics("figures/pos_example.png")
 - .green[verb aspect]
 - .green[adverbs] of degree and negation
 - .green[verb] phrase ellipsis
-- colour terms
-- meta-discourse markers
-- formulaic language 
+- formulaic language/phraseology 
 
 ]
 
 ---
 
-## What types of automatic annotation exist?
+## Types of automatic annotation
 
 .pull-left[
 .large[
@@ -288,9 +252,9 @@ knitr::include_graphics("figures/pos_example.png")
 
 .pull-right[
 
-`r icons::fontawesome("search")` Your research:  
+`r icons::fontawesome("search")` Research topics  
 
-- Spanish .green[articles]
+- .green[articles]
 - .green[morpho-syntactic and syntactic labels]
 - .green[morphology]
 - semantic, syntactic and .green[discourse features]
@@ -302,16 +266,14 @@ knitr::include_graphics("figures/pos_example.png")
 - .green[verb aspect]
 - .green[adverbs] of degree and negation
 - .green[verb] phrase ellipsis
-- colour terms
-- meta-discourse markers
-- formulaic language 
+- formulaic language/phraseology 
 
 ]
 
 
 ---
 
-## What types of automatic annotation exist?
+## Types of automatic annotation
 
 .pull-left[
 .large[
@@ -331,9 +293,9 @@ knitr::include_graphics("figures/synt_parse_example.png")
 
 .pull-right[
 
-`r icons::fontawesome("search")` Your research:  
+`r icons::fontawesome("search")` Research topics  
 
-- Spanish .green[articles]
+- .green[articles]
 - .green[morpho-syntactic and syntactic labels]
 - .green[morphology]
 - semantic, .purple[syntactic] and .green[discourse features]
@@ -345,16 +307,14 @@ knitr::include_graphics("figures/synt_parse_example.png")
 - .green[verb aspect]
 - .green[adverbs] of degree and negation
 - .green[verb] .purple[phrase] ellipsis
-- colour terms
-- meta-discourse markers
-- .purple[formulaic language]
+- .purple[formulaic language/phraseology]
 
 ]
 
 ---
 
 
-## What types of automatic annotation exist?
+## Types of automatic annotation
 
 .pull-left[
 .large[
@@ -370,9 +330,9 @@ knitr::include_graphics("figures/synt_parse_example.png")
 
 .pull-right[
 
-`r icons::fontawesome("search")` Your research:  
+`r icons::fontawesome("search")` Research topics  
 
-- Spanish .green[articles]
+- .green[articles]
 - .green[morpho-syntactic and syntactic labels]
 - .green[morphology]
 - semantic, .purple[syntactic] and .green[discourse features]
@@ -384,15 +344,13 @@ knitr::include_graphics("figures/synt_parse_example.png")
 - .green[verb aspect]
 - .green[adverbs] of degree and negation
 - .green[verb] .purple[phrase] ellipsis
-- colour terms
-- meta-discourse markers
-- .purple[formulaic language]
+- .purple[formulaic language/phraseology]
 
 ]
 
 ---
 
-## What types of automatic annotation exist?
+## Types of automatic annotation
 
 .pull-left[
 .large[
@@ -414,9 +372,9 @@ knitr::include_graphics("figures/semantic_tags_example.png")
 
 .pull-right[
 
-`r icons::fontawesome("search")` Your research:  
+`r icons::fontawesome("search")` Research topics  
 
-- Spanish .green[articles]
+- .green[articles]
 - .green[morpho-syntactic and syntactic labels]
 - .green[morphology]
 - .orange[semantic], .purple[syntactic] and .green[discourse features]
@@ -428,15 +386,13 @@ knitr::include_graphics("figures/semantic_tags_example.png")
 - .green[verb aspect]
 - .green[adverbs] of degree and negation
 - .green[verb] .purple[phrase] ellipsis
-- .orange[colour terms]
-- .orange[meta-discourse markers]
-- .purple[formulaic language]
+- .purple[formulaic language/phraseology]
 
 ]
 
 ---
 
-## What types of automatic annotation exist?
+## Types of automatic annotation
 
 .pull-left[
 .large[
@@ -476,35 +432,8 @@ knitr::include_graphics("figures/consistency.jpeg")
 - Text-preprocessing
 - POS-tagging and lemmatization
 - Hands on activity: *POS-tagging and lemmatization*
-
-
-<br> 
-
-`r icons::fontawesome("coffee")` *Coffee break* (15.30)
-
-<br>
-
 - Syntactic annotation
-- Hands on activity: *Syntactic annotation*
 - The reliability of automatic tools
-- Final remarks
-
-
----
-
-## How this workshop will work
-
-```{r, out.width="55%"}
-knitr::include_graphics("figures/adventure.webp")
-```
-
---
-
-.center[
-**Option 1.** Webtools/Excel  
-**Option 2.** R
-]
-
 
 ---
 
@@ -518,7 +447,7 @@ class: header-slide
 
 .pull-left[
 
-.small[
+.medium[
 ```{r, results='asis'}
 ex_txt_01 <- scan(here("data", "example_texts", "1638304.txt"), what = character(), sep = "\n") %>%
   paste(., collapse = " ") %>%
@@ -542,7 +471,7 @@ cat(ex_txt_01)
 
 .pull-left[
 
-.small[
+.medium[
 ```{r, results='asis'}
 ex_txt_01 %>%
   str_replace_all(., "(don ’t)", ".content-box-red[\\1]") %>%
@@ -620,7 +549,6 @@ ex_txt_01 %>%
 ]
 
 1. Manually
-2. Semi-manually using search and replace (e.g., in Excel)
 3. Semi-manually using [regular expressions](https://regex101.com/) (e.g., in a text editor)
 4. Semi-automatically using a script with regular expressions (e.g., in R or python)
 
@@ -628,21 +556,6 @@ ex_txt_01 %>%
 `r icons::fontawesome("minus")` Time intensive
 `r icons::fontawesome("plus")` Replicable
 ]
-
-
----
-
-## Excel
-
-```{r, out.width="70%"}
-knitr::include_graphics("figures/excel_clean.png")
-```
-
-`SUBSTITUTE()` function (For more details see [here](https://support.microsoft.com/en-au/office/substitute-function-6434944e-a904-4336-a9b0-1e58df3bc332))    
-
-
-`=SUBSTITUTE(text, old_text, new_text, [instance_num])`  
-`=SUBSTITUTE(A2,"’", "'")`
 
 
 ---
@@ -707,6 +620,7 @@ See [here](https://regex101.com/) for a website where you can test regular expre
 ]
 
 .pull-right[
+
 ```{r, fig.align='center', fig.cap = "" }
 knitr::include_graphics("figures/textmate_search_regex.png")
 ```
@@ -728,10 +642,9 @@ Special patterns that allow you to search for specific sequences.
 `?`: Returns zero or more of the previous character  
 `.`: Returns any single character  
 
-See [here](https://regex101.com/) for a website where you can test regular expressions.
-
 .content-box-blue[
-`r icons::fontawesome("flask")` Try this: What regular expression could be used to remove the 'headers' from the ICLE texts? (e.g., ` <ICLE-BR-FF-0062.1> `). Be careful not to remove anything else!
+`r icons::fontawesome("home")` Try this at home: What regular expression could be used to remove the 'headers' from the ICLE texts? (e.g., ` <ICLE-BR-FF-0062.1> `). Be careful not to remove anything else! (Answers at the end of the slides).
+
 ]
 
 ]
@@ -739,33 +652,6 @@ See [here](https://regex101.com/) for a website where you can test regular expre
 .pull-right[
 ```{r, fig.align='center', fig.cap = "" }
 knitr::include_graphics("figures/textmate_search_regex.png")
-```
-
-]
-
----
-
-## Some possible solutions
-
-.center[.large[How to find...` <ICLE-BR-FF-0062.1> `]]
-
---
-
-.pull-left[`<\w{4}-\w{2}-\w{2}-\w{4}\.\d>`  
-
-```{r, out.width="60%"}
-knitr::include_graphics("figures/regex_exp-1.png")
-```
-
-]
-
---
-
-.pull-right[
-`<[^>]+>`
-
-```{r, out.width="60%"}
-knitr::include_graphics("figures/regex-exp-2.png")
 ```
 
 ]
@@ -1867,7 +1753,7 @@ class: header-slide
 ]
 
 .pull-right[
-- Spanish articles
+- articles
 - morpho-syntactic and syntactic labels
 - morphology
 - semantic, syntactic and discourse features
@@ -1879,9 +1765,9 @@ class: header-slide
 - verb aspect
 - adverbs of degree and negation
 - verb phrase ellipsis
-- colour terms
-- meta-discourse markers
-- formulaic language 
+
+
+- formulaic language/phraseology 
 ]
 
 
@@ -1915,4 +1801,30 @@ Zeldes, A. (2020). Corpus Architecture. In M. Paquot & S. Th. Gries (Eds.), A Pr
 
 ]
 
+# Solutions
+
+## Regex Solution
+
+.center[.large[How to find...` <ICLE-BR-FF-0062.1> `]]
+
+--
+
+.pull-left[`<\w{4}-\w{2}-\w{2}-\w{4}\.\d>`  
+
+```{r, out.width="60%"}
+knitr::include_graphics("figures/regex_exp-1.png")
+```
+
+]
+
+--
+
+.pull-right[
+`<[^>]+>`
+
+```{r, out.width="60%"}
+knitr::include_graphics("figures/regex-exp-2.png")
+```
+
+]
 
