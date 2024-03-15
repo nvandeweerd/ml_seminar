@@ -879,7 +879,7 @@ pos_example <- str_split(claws_horizontal, " ", simplify = TRUE) %>%
 ```
 
 
-**Verbs:** `r pos_example %>% str_subset("_V") %>% paste0(collapse = ", ")`  
+**Verbs:** `r c(pos_example %>% str_subset("_V") %>% paste0(collapse = ", "), "mension_VV1")`  
 <br>
 
 **Nouns:** `r pos_example %>% str_subset("_N") %>% paste0(collapse = ", ")`
@@ -975,6 +975,7 @@ icle_txt %>%
 ## Webtools
 
 .pull-left[
+
 .center[
 [TreeTagger](https://cental.uclouvain.be/treetagger/)]
 
@@ -1181,12 +1182,14 @@ knitr::include_graphics("figures/spacy_example.svg")
 
 .pull-left[
 
-.center[[CoreNLP](https://corenlp.run/)]
+.center[[CoreNLP](https://corenlp.run/)
+]
 
 ```{r, fig.align='center', out.width="70%", fig.cap = ""}
 knitr::include_graphics("figures/corenlp-webpage.png")
 ```
 
+]
 
 .pull-right[
 
@@ -1198,7 +1201,27 @@ knitr::include_graphics("figures/hugging_face_visualizer.png")
 
 ]
 
+---
 
+## (At home) Activity: Syntactic parsing
+
+.pull-left[
+**Webtools/Excel Option**
+
+Open `activity_02_parsing.docx` and follow the instructions.
+
+**R Option**
+
+Open `activity_02_parsing.R` and follow the instructions.
+
+.content-box-blue[
+`r icons::fontawesome("github")` Remember that all materials and sides available on [GitHub](github.com/nvandeweerd/lcr_ss_2023). 
+
+1. Click on .content-box-green[ `< > Code`].
+2. [Download ZIP](https://github.com/nvandeweerd/lcr_ss_2023/archive/refs/heads/main.zip) to download all files.
+]
+
+]
 
 
 ---
