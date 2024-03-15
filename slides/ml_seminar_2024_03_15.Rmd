@@ -13,7 +13,7 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-#knit: pagedown::chrome_print
+knit: pagedown::chrome_print
 editor_options: 
   chunk_output_type: console
 ---
@@ -392,21 +392,9 @@ knitr::include_graphics("figures/semantic_tags_example.png")
 
 ---
 
-## Types of automatic annotation
-
-.pull-left[
-.large[
-1. Part of Speech (POS) tagging
-2. Syntactic parsing
-3. .grey[Semantic annotation]
-]
-
-]
-
----
-
 ## Why use automatic annotation?
 
+--
 
 .pull-left[
 ```{r, out.width="60%"}
@@ -433,7 +421,7 @@ knitr::include_graphics("figures/consistency.jpeg")
 - POS-tagging and lemmatization
 - Hands on activity: *POS-tagging and lemmatization*
 - Syntactic annotation
-- The reliability of automatic tools
+- The reliability of automatic tools on learner data
 
 ---
 
@@ -505,7 +493,7 @@ ex_txt_01 %>%
 
 .pull-left[
 
-.small[
+.medium[
 ```{r, results='asis'}
 ex_txt_01 %>%
   str_replace_all(., "(don ’t)", ".content-box-red[\\1]") %>%
@@ -560,47 +548,6 @@ ex_txt_01 %>%
 
 ---
 
-## Notepad++ (PC) / Textmate (Mac)
-
-.pull-left[
-.center[
-[Notepad + +](https://notepad-plus-plus.org/)]
-
-```{r, fig.align='center', fig.cap = "" }
-knitr::include_graphics("figures/notepad.png")
-```
-
-]
-
-.pull-right[
-.center[
-[Textmate](https://macromates.com/) ]
-```{r, fig.align='center', fig.cap = ""}
-knitr::include_graphics("figures/textmate.png")
-```
-
-]
-
----
-
-## Textmate (Mac)
-
-.pull-left[
-```{r, fig.align='center', fig.cap = "" }
-knitr::include_graphics("figures/textmate_text.png")
-```
-
-]
-
-.pull-right[
-```{r, fig.align='center', fig.cap = "" }
-knitr::include_graphics("figures/textmate_search.png")
-```
-
-]
-
-
----
 
 ## Regular expressions (RegEx)
 
@@ -643,7 +590,7 @@ Special patterns that allow you to search for specific sequences.
 `.`: Returns any single character  
 
 .content-box-blue[
-`r icons::fontawesome("home")` Try this at home: What regular expression could be used to remove the 'headers' from the ICLE texts? (e.g., ` <ICLE-BR-FF-0062.1> `). Be careful not to remove anything else! (Answers at the end of the slides).
+`r icons::fontawesome("home")` Try this at home: What regular expression could be used to remove the 'headers' from the ICLE texts (data/icle_texts)? (e.g., ` <ICLE-BR-FF-0062.1> `). Be careful not to remove anything else! (Answers at the end of the slides).
 
 ]
 
@@ -657,8 +604,50 @@ knitr::include_graphics("figures/textmate_search_regex.png")
 ]
 
 
+---
+
+## Notepad++ (PC) / Textmate (Mac)
+
+.pull-left[
+.center[
+[Notepad + +](https://notepad-plus-plus.org/)]
+
+```{r, fig.align='center', fig.cap = "" }
+knitr::include_graphics("figures/notepad.png")
+```
+
+]
+
+.pull-right[
+.center[
+[Textmate](https://macromates.com/) ]
+```{r, fig.align='center', fig.cap = ""}
+knitr::include_graphics("figures/textmate.png")
+```
+
+]
 
 ---
+
+## Textmate (Mac)
+
+.pull-left[
+```{r, fig.align='center', fig.cap = "" }
+knitr::include_graphics("figures/textmate_text.png")
+```
+
+]
+
+.pull-right[
+```{r, fig.align='center', fig.cap = "" }
+knitr::include_graphics("figures/textmate_search.png")
+```
+
+]
+
+
+---
+
 
 ## R
 
@@ -682,7 +671,7 @@ text %>%
 
 --
 
-.pull-right[
+.center[
 .content-box-red[
 `r icons::fontawesome("exclamation-triangle")` Note that you need double slashes for special or escape characters in R (`\\`).  
 
@@ -770,7 +759,7 @@ Easiest method (for English):
 .pull-right[
 Potential problems:
 
-.small[
+.medium[
 - clitics (isn't, ain't)
 - missing whitespace 
 - periods (etc., U.S.A., fig.)
@@ -783,10 +772,15 @@ Potential problems:
 ]
 
 
+
+]
+
+.center[
+
 .content-box-blue[
 `r icons::fontawesome("search")` For more information about tokenization see `r Citet(bib, c("Zeldes2020"), before = "", after = "")` and `r Citet(bib, c("Schmid2008"), before = "", after = "")`.  
 
-
+<br> 
 ]
 ]
 
@@ -908,69 +902,11 @@ pos_example <- str_split(claws_horizontal, " ", simplify = TRUE) %>%
 .content-box-blue[`r icons::fontawesome("question-circle")` What do you notice about the learner errors? (e.g., 'mension', 'is awareness campaigns')]
 ]
 
-
 ---
-
-## Types of output: *Horizontal*
-
-
-`We_PPIS2 find_VV0 that_CST in_II fact_NN1 these_DD2 people_NN are_VBR the_AT most_RGT exposed_JJ to_II media_NN not_XX to_II mension_NN1 the_AT fact_NN1 that_CST there_EX is_VBZ forever_RT AIDS_NN1 awareness_NN1 campaigns_NN2 launged_VVD through_RP out_RP the_AT county_NN1 ._. `
-
----
-
-## Types of output: *(Pseudo)-XML*
-
-
-```{r, comment=""}
-scan(here("data", "example_texts", "ICLE-TS-NOUN-0005.1_XML.txt"), what = character(), sep = "\n") %>%
-  paste0(collapse = " ") %>%
-  str_extract_all("<w[^(</w)]+</w>") %>%
-  unlist() %>%
-  head(20) %>%
-  cat(sep = "\n")
-```
-
-
----
-
-## Types of output: *Vertical*
-
-```{r}
-#function to tag text
-tagText <- function(file, format = "file", doc_id){
-  require(koRpus.lang.en)
-  tagged.text <- treetag(
-    file,
-    treetagger="manual",
-    lang="en",
-    TT.options=list(
-      path="/Applications/tree-tagger",
-      #tokenizer="tagger-scripts/utf8-tokenize.perl",
-      preset= "en"
-    ),
-    doc_id=doc_id,
-    format = format
-  )
-  return(tagged.text)
-}
-icle_txt <- here("data", "example_texts", "ICLE-TS-NOUN-0005.1.txt") 
-
-icle_txt <- tagText(icle_txt, doc_id = basename(icle_txt))@tokens 
-
-icle_txt %>%
-  head(20) %>%
-  select(idx, sntc, token, tag, lttr, wclass) %>%
-  print()
-
-```
-
-
----
-
 
 ## Lemmatization
 
-.medium[**Lemma:** "a 'base form', which provides a level of abstraction from any inflection that might appear in the original orthographic word."]  
+**Lemma:** "a 'base form', which provides a level of abstraction from any inflection that might appear in the original orthographic word."  
 .citation[ `r Citep(bib, c("Newman2021"), before = "", after = ": 29")`]
 
 .pull-left[
@@ -1003,6 +939,30 @@ read.csv(here("data", "example_texts", "ICLE-TS-NOUN-0005.1_treetagger.tsv"), se
 # Example
 
 ```{r}
+
+#function to tag text
+tagText <- function(file, format = "file", doc_id){
+  require("koRpus.lang.en")
+  tagged.text <- treetag(
+    file,
+    treetagger="manual",
+    lang="en",
+    TT.options=list(
+      path="/Applications/tree-tagger",
+      #tokenizer="tagger-scripts/utf8-tokenize.perl",
+      preset= "en"
+    ),
+    doc_id=doc_id,
+    format = format
+  )
+  return(tagged.text)
+}
+
+icle_txt <- here("data", "example_texts", "ICLE-TS-NOUN-0005.1.txt") 
+
+
+icle_txt <- tagText(icle_txt, doc_id = basename(icle_txt))@tokens 
+
 icle_txt %>%
   head(20) %>%
   select(idx, sntc, token, tag, lemma, lttr, wclass) %>%
@@ -1035,134 +995,39 @@ knitr::include_graphics("figures/claws.png")
 
 ---
 
-# R
+## R
 
-.pull-left[
+```{r, eval = FALSE, echo = TRUE}
+library(spacyr)
 
-```{r echo = TRUE, eval = FALSE}
+spacy_initialize(model = "en_core_web_sm")
 
-library(koRpus); library(koRpus.lang.en)
+text <- "She ran over the hill."
 
-file <- "data/example_texts/ICLE-TS-NOUN-0005.1.txt"
-  
-treetag(
-  file,
-  treetagger="manual",
-  lang="en",
-  TT.options=list(
-    # Change this to the location where TreeTagger is installed
-    path="/Applications/tree-tagger",
-    preset="en"
-  ),
-  doc_id=basename(file)
-)
-
+spacy_parse(text)
 
 ```
+
+.pull-left[
+.content-box-red[
+
+`r icons::fontawesome("exclamation-triangle")` Note: For this to work, spaCy must be installed locally on your computer but this can be done within the spaCy package using the `spacy_install()` function.
+
+]
 ]
 
 --
 
 .pull-right[
-```{r echo = TRUE, eval = FALSE}
-
-library(koRpus); library(koRpus.lang.en)
-
-text <- "This is a sentence."
-  
-treetag(
-  text,
-  # Need to add the 'format' argument.
-  format = "obj",
-  treetagger="manual",
-  lang="en",
-  TT.options=list(
-    # Change this to the location where TreeTagger is installed
-    path="/Applications/tree-tagger",
-    preset="en"
-  ),
-  # Not necessary anymore
-  #doc_id=basename(file)
-)
-
-
-```
-]
-
----
-
-# R
-
-.pull-left[
-
-```{r echo = TRUE, eval = FALSE}
-
-library(koRpus); library(koRpus.lang.en)
-
-file <- "data/example_texts/ICLE-TS-NOUN-0005.1.txt"
-  
-treetag(
-  file,
-  treetagger="manual",
-  lang="en",
-  TT.options=list(
-    # Change this to the location where TreeTagger is installed
-    path="/Applications/tree-tagger",
-    preset="en"
-  ),
-  doc_id=basename(file)
-)
-
-
-```
-
-.content-box-red[
-
-`r icons::fontawesome("exclamation-triangle")` Note: For this to work, both TreeTagger and the appropriate tagsets must first be installed locally on your computer. See instructions [here](https://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/).
-
-]
-
-]
-
-
-
-.pull-right[
-```{r echo = TRUE, eval = FALSE}
-
-library(koRpus); library(koRpus.lang.en)
-
-text <- "This is a sentence."
-  
-treetag(
-  text,
-  # Need to add the 'format' argument.
-  format = "obj",
-  treetagger="manual",
-  lang="en",
-  TT.options=list(
-    # Change this to the location where TreeTagger is installed
-    path="/Applications/tree-tagger",
-    preset="en"
-  ),
-  # Not necessary anymore
-  #doc_id=basename(file)
-)
-
-
-```
-
 .content-box-blue[
-`r icons::fontawesome("lightbulb")` See [this vignette](https://cran.r-project.org/web/packages/koRpus/vignettes/koRpus_vignette.html) for more information about the `koRpus` package.
+`r icons::fontawesome("lightbulb")` See [this vignette](https://cran.r-project.org/web/packages/spacyr/vignettes/using_spacyr.html) for more information about the `spacyr` package.
 ]
-
 ]
-
-
 
 
 ---
 
-## Activity 1: POS-tagging
+## Activity: POS-tagging
 
 .pull-left[
 **Webtools/Excel Option**
@@ -1185,7 +1050,7 @@ Open `activity_01_pos-tagging.R` and follow the instructions.
 
 ---
 
-## Activity 1: POS-tagging
+## Activity: POS-tagging
 
 .pull-left[
 **Webtools/Excel Option**
@@ -1197,7 +1062,7 @@ Open `activity_01_pos-tagging.docx` and follow the instructions.
 Open `activity_01_pos-tagging.R` and follow the instructions.
 
 .content-box-blue[
-`r icons::fontawesome("github")` Remember that all materials and are sides available on [GitHub](github.com/nvandeweerd/lcr_ss_2023)
+`r icons::fontawesome("github")` Remember that all materials and sides available on [GitHub](github.com/nvandeweerd/lcr_ss_2023). 
 
 1. Click on .content-box-green[ `< > Code`].
 2. [Download ZIP](https://github.com/nvandeweerd/lcr_ss_2023/archive/refs/heads/main.zip) to download all files.
@@ -1205,26 +1070,7 @@ Open `activity_01_pos-tagging.R` and follow the instructions.
 
 ]
 
-.pull-right[
 
-*Questions*  
-.small[
-1. What do you notice about the ICLE texts? What pre-processing steps (if any) might be necessary before using automatic annotation tools?
-1. R: What 'special characters' do you notice?
-1. R: How many 'words' and 'sentences' does BRFF1065.txt contain?
-1. R: What is the average sentence length of BRFF1065.txt? 
-1. WT: How many tokens were tagged with CLAWS (v5)?
-1. WT: What is the tag for the base form of a lexical verb in the C5 tagset?
-1. WT: What is the tag for the base form of a lexical verb in the C7 tagset?
-1. WT: What is meant by ‘[VVZ/86] NN2/14’?
-1. WT: What does the code ‘\@card\@’ mean?
-1. How many adjectives (JJ) are there in BRFF1065.txt?
-1. How many common nouns (NN, NNS) are there in BRFF1065.txt?
-1. How should you best deal with  unknown lemmas?
-1. What are the most frequent verb lemmas in the corpus?
-
-]
-]
 
 ---
 
@@ -1300,7 +1146,7 @@ knitr::include_graphics("figures/parse-phrase_structure.png")
 
 ---
 
-## Types of output: *CoNLL*
+## CoNLL
 
 *= Conference on Natural Language Learning*
 
@@ -1331,37 +1177,6 @@ knitr::include_graphics("figures/spacy_example.svg")
 
 ---
 
-
-## Types of output: [*FoLiA XML*](https://proycon.github.io/folia/)
-
-*= Format for Linguistic Annotation*
-
-```{r, out.width="60%"}
-knitr::include_graphics("figures/folia_example.png")
-```
-
-
----
-
-## Types of output: *json*
-
-.pull-left[
-```{r, comment = ""}
-scan(file = here("data", "json_example.json"), what = character(), sep = "\n") 
-```
-]
-
---
-
-.pull-right[
-.content-box-blue[
-`r icons::fontawesome("lightbulb")` Can be [converted](https://www.convertcsv.com/json-to-csv.htm) into CSV/Excel format.  
-
-]
-]
-
----
-
 ## Webtools
 
 .pull-left[
@@ -1372,11 +1187,6 @@ scan(file = here("data", "json_example.json"), what = character(), sep = "\n")
 knitr::include_graphics("figures/corenlp-webpage.png")
 ```
 
-.content-box-red[
-
-`r icons::fontawesome("exclamation-triangle")` Note: May not be available due to planned outage from June 24th-July 3rd.  
-]
-]
 
 .pull-right[
 
@@ -1388,99 +1198,12 @@ knitr::include_graphics("figures/hugging_face_visualizer.png")
 
 ]
 
----
 
-## R
-
-```{r, eval = FALSE, echo = TRUE}
-library(spacyr)
-
-spacy_initialize(model = "en_core_web_sm")
-
-text <- "She ran over the hill."
-
-spacy_parse(text, dependency = TRUE)
-
-```
-
-.pull-left[
-.content-box-red[
-
-`r icons::fontawesome("exclamation-triangle")` Note: For this to work, spaCy must be installed locally on your computer but this can be done within the spaCy package using the `spacy_install()` function.
-
-]
-]
-
---
-
-.pull-right[
-.content-box-blue[
-`r icons::fontawesome("lightbulb")` See [this vignette](https://cran.r-project.org/web/packages/spacyr/vignettes/using_spacyr.html) for more information about the `spacyr` package.
-]
-]
-
----
-
-## Activity 2: Syntactic parsing
-
-.pull-left[
-**Webtools/Excel Option**
-
-Open `activity_02_parsing.docx` and follow the instructions.
-
-**R Option**
-
-Open `activity_02_parsing.R` and follow the instructions.
-
-.content-box-blue[
-`r icons::fontawesome("github")` Remember that all materials and sides available on [GitHub](github.com/nvandeweerd/lcr_ss_2023). 
-
-1. Click on .content-box-green[ `< > Code`].
-2. [Download ZIP](https://github.com/nvandeweerd/lcr_ss_2023/archive/refs/heads/main.zip) to download all files.
-]
-
-]
 
 
 ---
 
-## Activity 2: Syntactic parsing
 
-.pull-left[
-**Webtools/Excel Option**
-
-Open `activity_02_parsing.docx` and follow the instructions.
-
-**R Option**
-
-Open `activity_02_parsing.R` and follow the instructions.
-
-.content-box-blue[
-`r icons::fontawesome("github")` Remember that all materials and sides available on [GitHub](github.com/nvandeweerd/lcr_ss_2023). 
-
-1. Click on .content-box-green[ `< > Code`].
-2. [Download ZIP](https://github.com/nvandeweerd/lcr_ss_2023/archive/refs/heads/main.zip) to download all files.
-]
-
-]
-
-.pull-right[
-
-*Questions*  
-.small[
-1. Which word is the final period dependent on?
-1. What type of dependency relationships are marked by ‘amod’ and ‘dobj’?
-1. How many amod dependencies are there in this text?
-1. What adjective modifies the word ‘difference’?
-1. What is the object of the verb ‘control’?
-1. R: What is the most frequency dependency relation in the corpus?
-1. R: What is the average length of noun phrases in the corpus? 
-
-]
-]
-
-
----
 
 class: header-slide
 
@@ -1752,38 +1475,19 @@ class: header-slide
 ]
 ]
 
-.pull-right[
-- articles
-- morpho-syntactic and syntactic labels
-- morphology
-- semantic, syntactic and discourse features
-- verb valency patterns
-- grammatical complexity
-- grammatical case
-- cohesion and cohesive devices
-- stance features
-- verb aspect
-- adverbs of degree and negation
-- verb phrase ellipsis
 
-
-- formulaic language/phraseology 
-]
 
 
 
 ---
 
-# .huge[Q]
-
-
-## .huge[.green[.center[& Eh?]]]
+.huge[Q & Eh?]
 
 ---
 
 ## `r icons::fontawesome("book")` Further reading  
 
-.small[
+.medium[
 
 Kyle, K. (2021). Natural language processing for learner corpus research. International Journal of Learner Corpus Research, 7(1), 1–16.
 
@@ -1801,7 +1505,13 @@ Zeldes, A. (2020). Corpus Architecture. In M. Paquot & S. Th. Gries (Eds.), A Pr
 
 ]
 
+---
+
+class: header-slide
+
 # Solutions
+
+---
 
 ## Regex Solution
 
