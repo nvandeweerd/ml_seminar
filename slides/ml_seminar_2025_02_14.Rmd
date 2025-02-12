@@ -13,7 +13,9 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-#knit: pagedown::chrome_print
+    includes:
+      in_header: ["assets/mathjax-equation-numbers.html", "assets/favicon.txt"]
+knit: pagedown::chrome_print
 editor_options: 
   chunk_output_type: console
 ---
@@ -145,6 +147,35 @@ knitr::include_graphics("figures/id-pic-leaf.png")
 ---
 
 <iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/events/TBIHYT/questions/65e5e027add92ffa913d95c6" width="100%"></iframe>
+
+---
+
+<iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/events/TBIHYT/questions/65e5e1d1783f8216e510c186" width="100%"></iframe>
+
+---
+
+## How this workshop will work
+
+```{r, out.width="55%"}
+knitr::include_graphics("figures/adventure.webp")
+```
+
+--
+
+.center[
+**Option 1.** Webtools/Excel  
+**Option 2.** R
+]
+
+
+
+---
+
+<iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/events/TBIHYT/questions/65e5e2f5da6c8523d7cb96c2" width="100%"></iframe>
+
+---
+
+<iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/events/TBIHYT/questions/65e5e3b15a86528e420eed99" width="100%"></iframe>
 
 ---
 
@@ -1079,6 +1110,15 @@ Open `activity_01_pos-tagging.R` and follow the instructions.
 
 ]
 
+.pull-right[
+
+**For R-users**
+
+- Make sure you have installed all required R packages (see `set-up.R`) and that you have a spaCy installation on your computer beforehand
+- If not: please use the `.rds` objects to load the spaCy-generated data in (installing spaCy can take a long time)
+
+]
+
 
 
 ---
@@ -1500,19 +1540,15 @@ class: header-slide
 
 ---
 
-## Your research
+<iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/events/TBIHYT/questions/67aca5191bcb7b27eb0e7169" width="100%"></iframe>
 
-.pull-left[
-.large[
-*How can you apply automatic tools to your research?*
-]
-]
+---
 
-
-
+<iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/events/TBIHYT/questions/67aca507f2d528368172e0a2" width="100%"></iframe>
 
 
 ---
+
 
 .huge[Q & Eh?]
 
@@ -1522,19 +1558,17 @@ class: header-slide
 
 .medium[
 
-Kyle, K. (2021). Natural language processing for learner corpus research. International Journal of Learner Corpus Research, 7(1), 1–16.
+Kyle, K. (2021). Natural language processing for learner corpus research. *International Journal of Learner Corpus Research*, *7*(1), 1–16.
 
-Murakami, A., Thompson, P., Hunston, S., & Vajn, D. (2017). “What is this corpus about?”: Using topic modelling to explore a specialised corpus. Corpora, 12(2), 243–277.
+Murakami, A., Thompson, P., Hunston, S., & Vajn, D. (2017). "What is this corpus about?": Using topic modelling to explore a specialised corpus. *Corpora*, *12*(2), 243–277.
 
-Newman, J., & Cox, C. (2021). Corpus annotation. In A practical handbook of corpus linguistics (pp. 25–48). Springer. https://doi.org/10.4324/9780429269035-7
+Newman, J., & Cox, C. (2021). Corpus annotation. In M. Paquot & S. Th. Gries (Eds.), *A practical handbook of corpus linguistics* (pp. 25–48). Springer. https://doi.org/10.1007/978-3-030-46216-1
 
-Schmid, H. (2008). Tokenizing and part-of-speech tagging. In Corpus Linguistics: An International Handbook. de Gruyter.
+Schmid, H. (2008). Tokenizing and part-of-speech tagging. In A. Lüdeling & M Kytö (Eds.) *Corpus linguistics: An international handbook*. de Gruyter.
 
-Shadrova, A. (2021). Topic models do not model topics: epistemological remarks and steps towards best practices. Journal of Data Mining & Digital Humanities, 2021, 7595.
+van Rooy, B. (2015). Annotating learner corpora. In S. Granger, G. Gilquin, & F. Meunier (Eds.), *The Cambridge handbook of learner corpus research* (pp. 79–106). Cambridge University Press. https://doi.org/10.1017/CBO9781139649414.005
 
-van Rooy, B. (2015). Annotating learner corpora. In S. Granger, G. Gilquin, & F. Meunier (Eds.), The Cambridge handbook of learner corpus research (pp. 79–106). Cambridge University Press. https://doi.org/10.1017/CBO9781139649414.005
-
-Zeldes, A. (2020). Corpus Architecture. In M. Paquot & S. Th. Gries (Eds.), A Practical Handbook of Corpus Linguistics (pp. 49–73). Springer International Publishing. https://link.springer.com/10.1007/978-3-030-46216-1_3
+Zeldes, A. (2021). Corpus Architecture. In M. Paquot & S. Th. Gries (Eds.), *A practical handbook of corpus linguistics* (pp. 49–73). Springer. https://doi.org/10.1007/978-3-030-46216-1
 
 ]
 
@@ -1570,4 +1604,8 @@ knitr::include_graphics("figures/regex-exp-2.png")
 ```
 
 ]
+
+```{r, echo = FALSE, eval = FALSE}
+pagedown::chrome_print(paste0(file, ".html"), output = paste0(file, ".pdf"), timeout = 60)
+```
 

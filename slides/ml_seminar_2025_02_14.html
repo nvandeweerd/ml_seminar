@@ -7,7 +7,7 @@
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
     <script src="libs/tile-view/tile-view.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x76f6894c3a7409fa0cde1737b7d8480","expires":14}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x1a7c6d4b43d48e9bf82bf720304c7f9","expires":14}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -16,6 +16,19 @@
     <script src="libs/xaringanExtra-banner/banner.js"></script>
     <script src="libs/kePrint/kePrint.js"></script>
     <link href="libs/lightable/lightable.css" rel="stylesheet" />
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } },
+      });
+    </script>
+    <style>
+    .mjx-mrow a {
+      color: black;
+      pointer-events: none;
+      cursor: default;
+    }
+    </style>
+    <link rel="shortcut icon" href="assets/favicon.ico">
     <link rel="stylesheet" href="assets/xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -46,7 +59,7 @@ class: center, middle, inverse, title-slide
 
 
 <script>document.addEventListener('DOMContentLoaded',function(){new xeBanner(JSON.parse('{"exclude":["title-slide"],"position":"top"}'))})</script>
-<script>document.addEventListener('DOMContentLoaded',function(){new xeBanner(JSON.parse('{"center":"Last updated: 2025-02-12 13:45:30 | Slides available here: github.com/nvandeweerd/ml_seminar","exclude":["title-slide"],"position":"bottom"}'))})</script>
+<script>document.addEventListener('DOMContentLoaded',function(){new xeBanner(JSON.parse('{"center":"Last updated: 2025-02-12 14:57:45 | Slides available here: github.com/nvandeweerd/ml_seminar","exclude":["title-slide"],"position":"bottom"}'))})</script>
 
 
 ## Materials and sides available on [GitHub]()
@@ -117,6 +130,33 @@ class: header-slide
 ---
 
 &lt;iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/events/TBIHYT/questions/65e5e027add92ffa913d95c6" width="100%"&gt;&lt;/iframe&gt;
+
+---
+
+&lt;iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/events/TBIHYT/questions/65e5e1d1783f8216e510c186" width="100%"&gt;&lt;/iframe&gt;
+
+---
+
+## How this workshop will work
+
+&lt;img src="figures/adventure.webp" width="55%" style="display: block; margin: auto;" /&gt;
+
+--
+
+.center[
+**Option 1.** Webtools/Excel  
+**Option 2.** R
+]
+
+
+
+---
+
+&lt;iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/events/TBIHYT/questions/65e5e2f5da6c8523d7cb96c2" width="100%"&gt;&lt;/iframe&gt;
+
+---
+
+&lt;iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/events/TBIHYT/questions/65e5e3b15a86528e420eed99" width="100%"&gt;&lt;/iframe&gt;
 
 ---
 
@@ -999,6 +1039,15 @@ Open `activity_01_pos-tagging.R` and follow the instructions.
 
 ]
 
+.pull-right[
+
+**For R-users**
+
+- Make sure you have installed all required R packages (see `set-up.R`) and that you have a spaCy installation on your computer beforehand
+- If not: please use the `.rds` objects to load the spaCy-generated data in (installing spaCy can take a long time)
+
+]
+
 
 
 ---
@@ -1099,6 +1148,14 @@ class: header-slide
 
 ## Webtools
 
+.pull-left[
+
+.center[[Hugging Face spaCy visualizer](https://huggingface.co/spaces/spacy/pipeline-visualizer)]
+
+&lt;img src="figures/hugging_face_visualizer.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+]
+
 .pull-right[
 
 .center[[LINDAT UDPipe](https://lindat.mff.cuni.cz/services/udpipe/)
@@ -1108,13 +1165,7 @@ class: header-slide
 
 ]
 
-.pull-left[
 
-.center[[Hugging Face spaCy visualizer](https://huggingface.co/spaces/spacy/pipeline-visualizer)]
-
-&lt;img src="figures/hugging_face_visualizer.png" width="70%" style="display: block; margin: auto;" /&gt;
-
-]
 
 ---
 
@@ -1437,19 +1488,15 @@ class: header-slide
 
 ---
 
-## Your research
+&lt;iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/events/TBIHYT/questions/67aca5191bcb7b27eb0e7169" width="100%"&gt;&lt;/iframe&gt;
 
-.pull-left[
-.large[
-*How can you apply automatic tools to your research?*
-]
-]
+---
 
-
-
+&lt;iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/events/TBIHYT/questions/67aca507f2d528368172e0a2" width="100%"&gt;&lt;/iframe&gt;
 
 
 ---
+
 
 .huge[Q &amp; Eh?]
 
@@ -1459,19 +1506,17 @@ class: header-slide
 
 .medium[
 
-Kyle, K. (2021). Natural language processing for learner corpus research. International Journal of Learner Corpus Research, 7(1), 1–16.
+Kyle, K. (2021). Natural language processing for learner corpus research. *International Journal of Learner Corpus Research*, *7*(1), 1–16.
 
-Murakami, A., Thompson, P., Hunston, S., &amp; Vajn, D. (2017). “What is this corpus about?”: Using topic modelling to explore a specialised corpus. Corpora, 12(2), 243–277.
+Murakami, A., Thompson, P., Hunston, S., &amp; Vajn, D. (2017). "What is this corpus about?": Using topic modelling to explore a specialised corpus. *Corpora*, *12*(2), 243–277.
 
-Newman, J., &amp; Cox, C. (2021). Corpus annotation. In A practical handbook of corpus linguistics (pp. 25–48). Springer. https://doi.org/10.4324/9780429269035-7
+Newman, J., &amp; Cox, C. (2021). Corpus annotation. In M. Paquot &amp; S. Th. Gries (Eds.), *A practical handbook of corpus linguistics* (pp. 25–48). Springer. https://doi.org/10.1007/978-3-030-46216-1
 
-Schmid, H. (2008). Tokenizing and part-of-speech tagging. In Corpus Linguistics: An International Handbook. de Gruyter.
+Schmid, H. (2008). Tokenizing and part-of-speech tagging. In A. Lüdeling &amp; M Kytö (Eds.) *Corpus linguistics: An international handbook*. de Gruyter.
 
-Shadrova, A. (2021). Topic models do not model topics: epistemological remarks and steps towards best practices. Journal of Data Mining &amp; Digital Humanities, 2021, 7595.
+van Rooy, B. (2015). Annotating learner corpora. In S. Granger, G. Gilquin, &amp; F. Meunier (Eds.), *The Cambridge handbook of learner corpus research* (pp. 79–106). Cambridge University Press. https://doi.org/10.1017/CBO9781139649414.005
 
-van Rooy, B. (2015). Annotating learner corpora. In S. Granger, G. Gilquin, &amp; F. Meunier (Eds.), The Cambridge handbook of learner corpus research (pp. 79–106). Cambridge University Press. https://doi.org/10.1017/CBO9781139649414.005
-
-Zeldes, A. (2020). Corpus Architecture. In M. Paquot &amp; S. Th. Gries (Eds.), A Practical Handbook of Corpus Linguistics (pp. 49–73). Springer International Publishing. https://link.springer.com/10.1007/978-3-030-46216-1_3
+Zeldes, A. (2021). Corpus Architecture. In M. Paquot &amp; S. Th. Gries (Eds.), *A practical handbook of corpus linguistics* (pp. 49–73). Springer. https://doi.org/10.1007/978-3-030-46216-1
 
 ]
 
