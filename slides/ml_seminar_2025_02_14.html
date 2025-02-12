@@ -7,7 +7,7 @@
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
     <script src="libs/tile-view/tile-view.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x1a7c6d4b43d48e9bf82bf720304c7f9","expires":14}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xf46e96e22574bbd956064cf6277a488","expires":14}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -59,7 +59,7 @@ class: center, middle, inverse, title-slide
 
 
 <script>document.addEventListener('DOMContentLoaded',function(){new xeBanner(JSON.parse('{"exclude":["title-slide"],"position":"top"}'))})</script>
-<script>document.addEventListener('DOMContentLoaded',function(){new xeBanner(JSON.parse('{"center":"Last updated: 2025-02-12 14:57:45 | Slides available here: github.com/nvandeweerd/ml_seminar","exclude":["title-slide"],"position":"bottom"}'))})</script>
+<script>document.addEventListener('DOMContentLoaded',function(){new xeBanner(JSON.parse('{"center":"Last updated: 2025-02-12 15:35:59 | Slides available here: github.com/nvandeweerd/ml_seminar","exclude":["title-slide"],"position":"bottom"}'))})</script>
 
 
 ## Materials and sides available on [GitHub]()
@@ -137,6 +137,10 @@ class: header-slide
 
 ---
 
+&lt;iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/events/TBIHYT/questions/65e5e3b15a86528e420eed99" width="100%"&gt;&lt;/iframe&gt;
+
+---
+
 ## How this workshop will work
 
 &lt;img src="figures/adventure.webp" width="55%" style="display: block; margin: auto;" /&gt;
@@ -148,15 +152,39 @@ class: header-slide
 **Option 2.** R
 ]
 
-
-
 ---
 
 &lt;iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/events/TBIHYT/questions/65e5e2f5da6c8523d7cb96c2" width="100%"&gt;&lt;/iframe&gt;
 
 ---
 
-&lt;iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/events/TBIHYT/questions/65e5e3b15a86528e420eed99" width="100%"&gt;&lt;/iframe&gt;
+## Learner corpus annotation in the wild
+
+&gt; "Durrant and Schmitt extracted word pairs manually from a raw corpus, while we extracted them automatically from a part-of-speech (POS) tagged corpus. We used CLAWS 73, which has a high degree of accuracy overall (96–97%)" .citation[(Granger and Bestgen, 2014, p. 235)]
+
+--
+
+&gt; "the progressive forms were extracted from the data with WordSmith Tools 5.0 (Scott, 2008) with the search item \*ing and different forms of the verb BE (am, \*’m, are, aren’\*, \*’re, is, \*’s, isn’\*, was, wasn’\*, were, weren’\*) as context words within a maximum of five words left." .citation[(Meriläinen, 2018, p. 175)]
+
+--
+
+&gt; "the present study is based on 1,640,351 words that emerged from the transcribed recordings of the Graded Examination in Spoken English (GESE) which were 166 Sandra Götzconducted at the Trinity College London.6 It has been morphologically annotated with the CLAWS tagger (C6 tagset)." .citation[(Götz, 2019, p. 165)]
+
+---
+
+## Learner corpus annotation in the wild
+
+&gt; "Durrant and Schmitt extracted word pairs manually from a raw corpus, while we extracted them automatically from a **part-of-speech (POS) tagged corpus**. We used CLAWS 73, which has a high degree of accuracy overall (96–97%)" .citation[(Granger and Bestgen, 2014, p. 235)]
+
+
+
+&gt; "the progressive forms were extracted from the data with WordSmith Tools 5.0 (Scott, 2008) with the **search item \*ing** and different forms of the verb BE (am, \*’m, are, aren’\*, \*’re, is, \*’s, isn’\*, was, wasn’\*, were, weren’\*) as context words within a maximum of five words left." .citation[(Meriläinen, 2018, p. 175)]
+
+
+
+&gt; "the present study is based on 1,640,351 words that emerged from the transcribed recordings of the Graded Examination in Spoken English (GESE) which were 166 Sandra Götzconducted at the Trinity College London.6 It has been **morphologically annotated with the CLAWS tagger (C6 tagset).**" .citation[(Götz, 2019, p. 165)]
+
+
 
 ---
 
@@ -412,15 +440,26 @@ Rooy, 2015: 80)]
 
 ]
 
+---
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+.center[.large[*What are some potential risks of automatic annotation?*]]
 
 ---
 
 ## Today's session
 
 - Text-preprocessing
-- POS-tagging and lemmatization
-- Hands on activity: *POS-tagging and lemmatization*
-- Syntactic annotation
+- POS-tagging and lemmatization  
+&lt;svg viewBox="0 0 640 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"&gt;&lt;/path&gt;&lt;/svg&gt; Hands on activity: *POS-tagging and lemmatization*  
+
+- Syntactic annotation  
+&lt;svg viewBox="0 0 640 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"&gt;&lt;/path&gt;&lt;/svg&gt; Hands on activity: *Syntactic parsing*  
+
 - The reliability of automatic tools on learner data
 
 ---
@@ -1548,6 +1587,8 @@ class: header-slide
 &lt;img src="figures/regex-exp-2.png" width="60%" style="display: block; margin: auto;" /&gt;
 
 ]
+
+
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>

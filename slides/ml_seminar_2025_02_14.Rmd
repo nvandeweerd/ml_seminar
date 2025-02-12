@@ -15,7 +15,7 @@ output:
       countIncrementalSlides: false
     includes:
       in_header: ["assets/mathjax-equation-numbers.html", "assets/favicon.txt"]
-knit: pagedown::chrome_print
+#knit: pagedown::chrome_print
 editor_options: 
   chunk_output_type: console
 ---
@@ -154,6 +154,10 @@ knitr::include_graphics("figures/id-pic-leaf.png")
 
 ---
 
+<iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/events/TBIHYT/questions/65e5e3b15a86528e420eed99" width="100%"></iframe>
+
+---
+
 ## How this workshop will work
 
 ```{r, out.width="55%"}
@@ -167,15 +171,39 @@ knitr::include_graphics("figures/adventure.webp")
 **Option 2.** R
 ]
 
-
-
 ---
 
 <iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/events/TBIHYT/questions/65e5e2f5da6c8523d7cb96c2" width="100%"></iframe>
 
 ---
 
-<iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/events/TBIHYT/questions/65e5e3b15a86528e420eed99" width="100%"></iframe>
+## Learner corpus annotation in the wild
+
+> "Durrant and Schmitt extracted word pairs manually from a raw corpus, while we extracted them automatically from a part-of-speech (POS) tagged corpus. We used CLAWS 73, which has a high degree of accuracy overall (96–97%)" .citation[(Granger and Bestgen, 2014, p. 235)]
+
+--
+
+> "the progressive forms were extracted from the data with WordSmith Tools 5.0 (Scott, 2008) with the search item \*ing and different forms of the verb BE (am, \*’m, are, aren’\*, \*’re, is, \*’s, isn’\*, was, wasn’\*, were, weren’\*) as context words within a maximum of five words left." .citation[(Meriläinen, 2018, p. 175)]
+
+--
+
+> "the present study is based on 1,640,351 words that emerged from the transcribed recordings of the Graded Examination in Spoken English (GESE) which were 166 Sandra Götzconducted at the Trinity College London.6 It has been morphologically annotated with the CLAWS tagger (C6 tagset)." .citation[(Götz, 2019, p. 165)]
+
+---
+
+## Learner corpus annotation in the wild
+
+> "Durrant and Schmitt extracted word pairs manually from a raw corpus, while we extracted them automatically from a **part-of-speech (POS) tagged corpus**. We used CLAWS 73, which has a high degree of accuracy overall (96–97%)" .citation[(Granger and Bestgen, 2014, p. 235)]
+
+
+
+> "the progressive forms were extracted from the data with WordSmith Tools 5.0 (Scott, 2008) with the **search item \*ing** and different forms of the verb BE (am, \*’m, are, aren’\*, \*’re, is, \*’s, isn’\*, was, wasn’\*, were, weren’\*) as context words within a maximum of five words left." .citation[(Meriläinen, 2018, p. 175)]
+
+
+
+> "the present study is based on 1,640,351 words that emerged from the transcribed recordings of the Graded Examination in Spoken English (GESE) which were 166 Sandra Götzconducted at the Trinity College London.6 It has been **morphologically annotated with the CLAWS tagger (C6 tagset).**" .citation[(Götz, 2019, p. 165)]
+
+
 
 ---
 
@@ -441,15 +469,26 @@ knitr::include_graphics("figures/consistency.jpeg")
 
 ]
 
+---
+
+<br>
+<br>
+<br>
+<br>
+<br>
+.center[.large[*What are some potential risks of automatic annotation?*]]
 
 ---
 
 ## Today's session
 
 - Text-preprocessing
-- POS-tagging and lemmatization
-- Hands on activity: *POS-tagging and lemmatization*
-- Syntactic annotation
+- POS-tagging and lemmatization  
+`r icons::fontawesome("laptop")` Hands on activity: *POS-tagging and lemmatization*  
+
+- Syntactic annotation  
+`r icons::fontawesome("laptop")` Hands on activity: *Syntactic parsing*  
+
 - The reliability of automatic tools on learner data
 
 ---
@@ -1606,6 +1645,7 @@ knitr::include_graphics("figures/regex-exp-2.png")
 ]
 
 ```{r, echo = FALSE, eval = FALSE}
+file <- "slides/ml_seminar_2025_02_14"
 pagedown::chrome_print(paste0(file, ".html"), output = paste0(file, ".pdf"), timeout = 60)
 ```
 
