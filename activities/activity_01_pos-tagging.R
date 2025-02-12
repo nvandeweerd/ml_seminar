@@ -1,6 +1,5 @@
 # Annotation of learner corpus data
 # Master Language
-# March 15th, 2024, Amsterdam
 
 # Activity 1: POS-tagging
 
@@ -9,6 +8,7 @@
 # run the following lines to install them
 install.packages("dplyr") # For easy data manipulation
 install.packages ("spacyr") # A package for dependency annotation
+install.packages("stringr") # A package for manipulating strings (character vectors)
 library(dplyr); library(spacyr); library(stringr)
 
 #### Step 2. Set up spaCy: First time ####
@@ -182,3 +182,6 @@ icle_tagged %>%
 # load the `icle_tagged.rds` object 
 icle_tagged <- readRDS("data/icle_tagged.rds")
 
+# spaCy can use a lot of memory in the background, so it's a good idea to terminate 
+# it when you are finished 
+spacy_finalize()

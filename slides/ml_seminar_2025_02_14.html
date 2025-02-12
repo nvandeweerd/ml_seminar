@@ -7,7 +7,7 @@
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
     <script src="libs/tile-view/tile-view.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"b50cf11f7c3744f1b187606d649abd0c","expires":14}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x76f6894c3a7409fa0cde1737b7d8480","expires":14}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -46,13 +46,13 @@ class: center, middle, inverse, title-slide
 
 
 <script>document.addEventListener('DOMContentLoaded',function(){new xeBanner(JSON.parse('{"exclude":["title-slide"],"position":"top"}'))})</script>
-<script>document.addEventListener('DOMContentLoaded',function(){new xeBanner(JSON.parse('{"center":"Last updated: 2025-02-12 11:48:48 | Slides available here: github.com/nvandeweerd/ml_seminar","exclude":["title-slide"],"position":"bottom"}'))})</script>
+<script>document.addEventListener('DOMContentLoaded',function(){new xeBanner(JSON.parse('{"center":"Last updated: 2025-02-12 13:45:30 | Slides available here: github.com/nvandeweerd/ml_seminar","exclude":["title-slide"],"position":"bottom"}'))})</script>
 
 
 ## Materials and sides available on [GitHub]()
 
 .pull-left[
-&lt;img src="figures/github_download.png" width="4429" style="display: block; margin: auto;" /&gt;
+&lt;img src="figures/github_download.png" width="4011" style="display: block; margin: auto;" /&gt;
 
 1. Click on .content-box-green[ `&lt; &gt; Code`].
 2. [Download ZIP](https://github.com/nvandeweerd/ml_seminar/archive/refs/heads/main.zip) to download all files.
@@ -117,7 +117,6 @@ class: header-slide
 ---
 
 &lt;iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/events/TBIHYT/questions/65e5e027add92ffa913d95c6" width="100%"&gt;&lt;/iframe&gt;
-
 
 ---
 
@@ -203,7 +202,7 @@ Rooy, 2015: 80)]
 - .green[verb aspect]
 - .green[adverbs] of degree and negation
 - .green[verb] phrase ellipsis
-- formulaic language/phraseology 
+- .green[formulaic language/phraseology] 
 
 ]
 
@@ -235,7 +234,7 @@ Rooy, 2015: 80)]
 - .green[verb aspect]
 - .green[adverbs] of degree and negation
 - .green[verb] phrase ellipsis
-- formulaic language/phraseology 
+- .green[formulaic language/phraseology] 
 
 ]
 
@@ -731,6 +730,16 @@ Potential problems:
 ]
 ]
 
+---
+
+## Tokenization
+
+*The upside:* Most automatic tools include a tokenization step. 
+
+--
+
+- Usually 'rules'-based 
+- Important to check yourself how this will influence your data/analyses 
 
 ---
 
@@ -817,7 +826,7 @@ Rooy, 2015: 80-81)]
 
 
 
-**Verbs:** launged_VVD, find_VV0, is_VBZ, are_VBR, mension_VV1  
+**Verbs:** launged_VVD, find_VV0, is_VBZ, are_VBR  
 &lt;br&gt;
 
 **Nouns:** media_NN, fact_NN1, AIDS_NN1, county_NN1, awareness_NN1, people_NN, mension_NN1, campaigns_NN2, fact_NN1
@@ -837,7 +846,7 @@ Rooy, 2015: 80-81)]
 
 .center[
 
-.content-box-blue[&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 448c-110.532 0-200-89.431-200-200 0-110.495 89.472-200 200-200 110.491 0 200 89.471 200 200 0 110.53-89.431 200-200 200zm107.244-255.2c0 67.052-72.421 68.084-72.421 92.863V300c0 6.627-5.373 12-12 12h-45.647c-6.627 0-12-5.373-12-12v-8.659c0-35.745 27.1-50.034 47.579-61.516 17.561-9.845 28.324-16.541 28.324-29.579 0-17.246-21.999-28.693-39.784-28.693-23.189 0-33.894 10.977-48.942 29.969-4.057 5.12-11.46 6.071-16.666 2.124l-27.824-21.098c-5.107-3.872-6.251-11.066-2.644-16.363C184.846 131.491 214.94 112 261.794 112c49.071 0 101.45 38.304 101.45 88.8zM298 368c0 23.159-18.841 42-42 42s-42-18.841-42-42 18.841-42 42-42 42 18.841 42 42z"&gt;&lt;/path&gt;&lt;/svg&gt; What do you notice about the learner errors? (e.g., 'mension', 'is awareness campaigns')]
+.content-box-blue[&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 448c-110.532 0-200-89.431-200-200 0-110.495 89.472-200 200-200 110.491 0 200 89.471 200 200 0 110.53-89.431 200-200 200zm107.244-255.2c0 67.052-72.421 68.084-72.421 92.863V300c0 6.627-5.373 12-12 12h-45.647c-6.627 0-12-5.373-12-12v-8.659c0-35.745 27.1-50.034 47.579-61.516 17.561-9.845 28.324-16.541 28.324-29.579 0-17.246-21.999-28.693-39.784-28.693-23.189 0-33.894 10.977-48.942 29.969-4.057 5.12-11.46 6.071-16.666 2.124l-27.824-21.098c-5.107-3.872-6.251-11.066-2.644-16.363C184.846 131.491 214.94 112 261.794 112c49.071 0 101.45 38.304 101.45 88.8zM298 368c0 23.159-18.841 42-42 42s-42-18.841-42-42 18.841-42 42-42 42 18.841 42 42z"&gt;&lt;/path&gt;&lt;/svg&gt; What do you notice about the learner errors? (e.g., 'launged', 'mension', 'is awareness campaigns')]
 ]
 
 ---
@@ -1090,16 +1099,16 @@ class: header-slide
 
 ## Webtools
 
-.pull-left[
-
-.center[[CoreNLP](https://corenlp.run/)
-]
-
-&lt;img src="figures/corenlp-webpage.png" width="70%" style="display: block; margin: auto;" /&gt;
-
-]
-
 .pull-right[
+
+.center[[LINDAT UDPipe](https://lindat.mff.cuni.cz/services/udpipe/)
+]
+
+&lt;img src="figures/lindat_udpipe.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-left[
 
 .center[[Hugging Face spaCy visualizer](https://huggingface.co/spaces/spacy/pipeline-visualizer)]
 

@@ -146,7 +146,6 @@ knitr::include_graphics("figures/id-pic-leaf.png")
 
 <iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/events/TBIHYT/questions/65e5e027add92ffa913d95c6" width="100%"></iframe>
 
-
 ---
 
 ## Types of automatic annotation
@@ -233,7 +232,7 @@ knitr::include_graphics("figures/pos_example.png")
 - .green[verb aspect]
 - .green[adverbs] of degree and negation
 - .green[verb] phrase ellipsis
-- formulaic language/phraseology 
+- .green[formulaic language/phraseology] 
 
 ]
 
@@ -265,7 +264,7 @@ knitr::include_graphics("figures/pos_example.png")
 - .green[verb aspect]
 - .green[adverbs] of degree and negation
 - .green[verb] phrase ellipsis
-- formulaic language/phraseology 
+- .green[formulaic language/phraseology] 
 
 ]
 
@@ -783,6 +782,16 @@ Potential problems:
 ]
 ]
 
+---
+
+## Tokenization
+
+*The upside:* Most automatic tools include a tokenization step. 
+
+--
+
+- Usually 'rules'-based 
+- Important to check yourself how this will influence your data/analyses 
 
 ---
 
@@ -878,7 +887,7 @@ pos_example <- str_split(claws_horizontal, " ", simplify = TRUE) %>%
 ```
 
 
-**Verbs:** `r c(pos_example %>% str_subset("_V") %>% paste0(collapse = ", "), "mension_VV1")`  
+**Verbs:** `r c(pos_example %>% str_subset("_V") %>% paste0(collapse = ", "))`  
 <br>
 
 **Nouns:** `r pos_example %>% str_subset("_N") %>% paste0(collapse = ", ")`
@@ -898,7 +907,7 @@ pos_example <- str_split(claws_horizontal, " ", simplify = TRUE) %>%
 
 .center[
 
-.content-box-blue[`r icons::fontawesome("question-circle")` What do you notice about the learner errors? (e.g., 'mension', 'is awareness campaigns')]
+.content-box-blue[`r icons::fontawesome("question-circle")` What do you notice about the learner errors? (e.g., 'launged', 'mension', 'is awareness campaigns')]
 ]
 
 ---
@@ -1181,17 +1190,6 @@ knitr::include_graphics("figures/spacy_example.svg")
 
 .pull-left[
 
-.center[[CoreNLP](https://corenlp.run/)
-]
-
-```{r, fig.align='center', out.width="70%", fig.cap = ""}
-knitr::include_graphics("figures/corenlp-webpage.png")
-```
-
-]
-
-.pull-right[
-
 .center[[Hugging Face spaCy visualizer](https://huggingface.co/spaces/spacy/pipeline-visualizer)]
 
 ```{r, fig.align='center', out.width="70%", fig.cap = ""}
@@ -1199,6 +1197,19 @@ knitr::include_graphics("figures/hugging_face_visualizer.png")
 ```
 
 ]
+
+.pull-right[
+
+.center[[LINDAT UDPipe](https://lindat.mff.cuni.cz/services/udpipe/)
+]
+
+```{r, fig.align='center', out.width="70%", fig.cap = ""}
+knitr::include_graphics("figures/lindat_udpipe.png")
+```
+
+]
+
+
 
 ---
 

@@ -1,6 +1,6 @@
 # Annotation of learner corpus data
 # Master Language
-# March 15th, 2024, Amsterdam
+
 
 # Activity 2: Parsing
 
@@ -116,4 +116,6 @@ mean(spacy_extract_nounphrases(icle)$length)
 # Another convenience function is named entity recognition
 spacy_extract_entity(icle)
 
-
+# spaCy can use a lot of memory in the background, so it's a good idea to terminate 
+# it when you are finished 
+spacy_finalize()
