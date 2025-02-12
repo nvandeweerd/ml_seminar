@@ -1,10 +1,10 @@
-# Master Language
+# Master Language Seminar
 
 ## Annotation of learner corpus data
 
 Slides and materials for the Master Language Seminar on annotation of learner corpus data. 
 
-**Dates: **
+Dates:
 
 - March 15th, 2024 *Vrije Universiteit Amsterdam*
 - February 14th, 2025 *Online*
