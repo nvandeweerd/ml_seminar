@@ -63,7 +63,7 @@ bib <- RefManageR::ReadBib(here("slides", "assets", "references.bib"), check = T
 
 ```{r xaringan-banner, echo=FALSE}
 xaringanExtra::use_banner(
-  bottom_center = paste0("Last updated: ", format(Sys.time()), " | ", "Slides available here: github.com/nvandeweerd/ml_seminar_2024_03_15"),
+  bottom_center = paste0("Last updated: ", format(Sys.time()), " | ", "Slides available here: github.com/nvandeweerd/ml_seminar"),
   exclude = "title-slide"
 )
 ```
@@ -77,12 +77,12 @@ knitr::include_graphics("figures/github_download.png")
 ```
 
 1. Click on .content-box-green[ `< > Code`].
-2. [Download ZIP](https://github.com/nvandeweerd/ml_seminar_2024_03_15/archive/refs/heads/main.zip) to download all files.
+2. [Download ZIP](https://github.com/nvandeweerd/ml_seminar/archive/refs/heads/main.zip) to download all files.
 ]
 
 .pull-right[
 ```{r, out.width="80%"}
-knitr::include_graphics("figures/qrcode.png")
+knitr::include_graphics("figures/qrcode_github.com.png")
 ```
 ]
 
