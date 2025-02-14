@@ -130,8 +130,8 @@ knitr::include_graphics("figures/id-pic-noleaf.png")
 `r icons::fontawesome("search")` What makes me happy:
 - Eurovision Songcontest
 - Baking cookies 
-- Gym
-- Reading
+- Cycling
+- Reading dystopian novels 
 
 
 ]
@@ -151,6 +151,10 @@ knitr::include_graphics("figures/id-pic-leaf.png")
 ---
 
 <iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/events/TBIHYT/questions/65e5e1d1783f8216e510c186" width="100%"></iframe>
+
+---
+
+<iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/events/TBIHYT/questions/65e5e33f0e24199ba355e31b" width="100%"></iframe>
 
 ---
 
@@ -484,12 +488,14 @@ knitr::include_graphics("figures/consistency.jpeg")
 
 - Text-preprocessing
 - POS-tagging and lemmatization  
-`r icons::fontawesome("laptop")` Hands on activity: *POS-tagging and lemmatization*  
-
 - Syntactic annotation  
-`r icons::fontawesome("laptop")` Hands on activity: *Syntactic parsing*  
+- The reliability of automatic tools on learner data  
+- Hands-on activities:  
 
-- The reliability of automatic tools on learner data
+    `r icons::fontawesome("laptop")` *POS-tagging and lemmatization*  
+    `r icons::fontawesome("laptop")` *Syntactic parsing*  
+
+
 
 ---
 
@@ -1106,62 +1112,6 @@ spacy_parse(text)
 
 ---
 
-## Activity: POS-tagging
-
-.pull-left[
-**Webtools/Excel Option**
-
-Open `activity_01_pos-tagging.docx` and follow the instructions.
-
-**R Option**
-
-Open `activity_01_pos-tagging.R` and follow the instructions.
-
-.content-box-blue[
-`r icons::fontawesome("github")` Remember that all materials and sides available on [GitHub](github.com/nvandeweerd/lcr_ss_2023). 
-
-1. Click on .content-box-green[ `< > Code`].
-2. [Download ZIP](https://github.com/nvandeweerd/lcr_ss_2023/archive/refs/heads/main.zip) to download all files.
-]
-
-]
-
-
----
-
-## Activity: POS-tagging
-
-.pull-left[
-**Webtools/Excel Option**
-
-Open `activity_01_pos-tagging.docx` and follow the instructions.
-
-**R Option**
-
-Open `activity_01_pos-tagging.R` and follow the instructions.
-
-.content-box-blue[
-`r icons::fontawesome("github")` Remember that all materials and sides available on [GitHub](github.com/nvandeweerd/lcr_ss_2023). 
-
-1. Click on .content-box-green[ `< > Code`].
-2. [Download ZIP](https://github.com/nvandeweerd/lcr_ss_2023/archive/refs/heads/main.zip) to download all files.
-]
-
-]
-
-.pull-right[
-
-**For R-users**
-
-- Make sure you have installed all required R packages (see `set-up.R`) and that you have a spaCy installation on your computer beforehand
-- If not: please use the `.rds` objects to load the spaCy-generated data in (installing spaCy can take a long time)
-
-]
-
-
-
----
-
 class: header-slide
 
 # Syntactic parsing
@@ -1288,33 +1238,42 @@ knitr::include_graphics("figures/lindat_udpipe.png")
 
 ]
 
-
-
 ---
 
-## (At home) Activity: Syntactic parsing
+
+## R
+
+```{r, eval = FALSE, echo = TRUE}
+library(spacyr)
+
+spacy_initialize(model = "en_core_web_sm")
+
+text <- "She ran over the hill."
+
+spacy_parse(text, dependency = TRUE)
+
+```
 
 .pull-left[
-**Webtools/Excel Option**
+.content-box-red[
 
-Open `activity_02_parsing.docx` and follow the instructions.
+`r icons::fontawesome("exclamation-triangle")` Note: For this to work, spaCy must be installed locally on your computer but this can be done within the spaCy package using the `spacy_install()` function.
 
-**R Option**
+]
+]
 
-Open `activity_02_parsing.R` and follow the instructions.
+--
 
+.pull-right[
 .content-box-blue[
-`r icons::fontawesome("github")` Remember that all materials and sides available on [GitHub](github.com/nvandeweerd/lcr_ss_2023). 
-
-1. Click on .content-box-green[ `< > Code`].
-2. [Download ZIP](https://github.com/nvandeweerd/lcr_ss_2023/archive/refs/heads/main.zip) to download all files.
+`r icons::fontawesome("lightbulb")` See [this vignette](https://cran.r-project.org/web/packages/spacyr/vignettes/using_spacyr.html) for more information about the `spacyr` package.
+]
 ]
 
-]
+
 
 
 ---
-
 
 
 class: header-slide
@@ -1551,7 +1510,88 @@ confusionMatrix(data, reference)
 
 class: header-slide
 
+# Hands-on activities
+
+
+---
+
+## Activity: POS-tagging
+
+.pull-left[
+**Webtools/Excel Option**
+
+Open `activity_01_pos-tagging.docx` and follow the instructions.
+
+**R Option**
+
+Open `activity_01_pos-tagging.R` and follow the instructions.
+
+.content-box-blue[
+`r icons::fontawesome("github")` Remember that all materials and sides available on [GitHub](github.com/nvandeweerd/lcr_ss_2023). 
+
+1. Click on .content-box-green[ `< > Code`].
+2. [Download ZIP](https://github.com/nvandeweerd/lcr_ss_2023/archive/refs/heads/main.zip) to download all files.
+]
+
+]
+
+--
+
+.pull-right[
+
+**For R-users**
+
+- Make sure you have installed all required R packages (see `set-up.R`) and that you have a spaCy installation on your computer beforehand
+- If not: please use the `.rds` objects to load the spaCy-generated data in (installing spaCy can take a long time)
+
+]
+
+
+---
+
+
+## Activity: Syntactic parsing
+
+.pull-left[
+**Webtools/Excel Option**
+
+Open `activity_02_parsing.docx` and follow the instructions.
+
+**R Option**
+
+Open `activity_02_parsing.R` and follow the instructions.
+
+.content-box-blue[
+`r icons::fontawesome("github")` Remember that all materials and sides available on [GitHub](github.com/nvandeweerd/lcr_ss_2023). 
+
+1. Click on .content-box-green[ `< > Code`].
+2. [Download ZIP](https://github.com/nvandeweerd/lcr_ss_2023/archive/refs/heads/main.zip) to download all files.
+]
+
+]
+
+---
+
+class: header-slide
+
 # Final remarks
+
+---
+
+## Learner corpus annotation in the wild
+
+> "Durrant and Schmitt extracted word pairs manually from a raw corpus, while we extracted them automatically from a **part-of-speech (POS) tagged corpus**. We used CLAWS 73, which has a high degree of accuracy overall (96–97%)" .citation[(Granger and Bestgen, 2014, p. 235)]
+
+
+
+> "the progressive forms were extracted from the data with WordSmith Tools 5.0 (Scott, 2008) with the **search item \*ing** and different forms of the verb BE (am, \*’m, are, aren’\*, \*’re, is, \*’s, isn’\*, was, wasn’\*, were, weren’\*) as context words within a maximum of five words left." .citation[(Meriläinen, 2018, p. 175)]
+
+
+
+> "the present study is based on 1,640,351 words that emerged from the transcribed recordings of the Graded Examination in Spoken English (GESE) which were 166 Sandra Götzconducted at the Trinity College London.6 It has been **morphologically annotated with the CLAWS tagger (C6 tagset).**" .citation[(Götz, 2019, p. 165)]
+
+
+
 
 ---
 
@@ -1590,6 +1630,56 @@ class: header-slide
 
 
 .huge[Q & Eh?]
+
+---
+
+## A Valentine's day poem
+
+.pull-left[
+
+.large[
+
+(NOUN nsubj) (AUX cop) red  
+(NOUN nsubj) are (ADJ root)  
+Annotations (AUX aux:pass) placed  
+(ADP case) tags (ADV advmod) (ADP case) you  
+]
+
+]
+
+.pull-right[
+
+```{r}
+knitr::include_graphics("figures/valentine.jpg")
+```
+
+]
+
+---
+
+## A Valentine's day poem
+
+.pull-left[
+
+
+.large[
+
+Roses are red  
+Violets are blue  
+Annotations are placed  
+With tags just for you  
+
+]
+
+]
+
+.pull-right[
+
+```{r}
+knitr::include_graphics("figures/valentine.jpg")
+```
+
+]
 
 ---
 
