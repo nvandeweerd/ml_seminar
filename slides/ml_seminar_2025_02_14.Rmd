@@ -104,6 +104,7 @@ class: header-slide
 
 `r icons::fontawesome("university")` Radboud University Nijmegen  
 `r icons::fontawesome("building")` Assistant professor in Language and Communication  
+`r icons::fontawesome("envelope")` nathan.vandeweerd@ru.nl  
 `r icons::fontawesome("search")` Research interests:
   - Phraseological complexity in L2 French
   - Language development during study abroad 
@@ -127,6 +128,7 @@ knitr::include_graphics("figures/id-pic-noleaf.png")
 
 `r icons::fontawesome("university")` Radboud University Nijmegen  
 `r icons::fontawesome("building")` Assistant professor in Language and Communication  
+`r icons::fontawesome("envelope")` nathan.vandeweerd@ru.nl  
 `r icons::fontawesome("search")` What makes me happy:
 - Eurovision Songcontest
 - Baking cookies 
@@ -1572,11 +1574,23 @@ Open `activity_02_parsing.R` and follow the instructions.
 
 ---
 
+???
+
+Discussion
+- any problems or issues? questions?
+- who used the web tools?
+	- what did you notice?
+- who used R?
+	 - what did you notice?
+
+---
+
 class: header-slide
 
 # Final remarks
 
 ---
+
 
 ## Learner corpus annotation in the wild
 
